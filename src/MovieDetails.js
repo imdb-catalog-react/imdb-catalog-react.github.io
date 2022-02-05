@@ -1,8 +1,9 @@
+import './MovieDetails.css';
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './MovieDetails.css';
 import ImdbTitleDetails from "./ImdbTitleDetails";
 import { Container } from "react-bootstrap";
+import constants from './config/constants';
 
 export default function MovieDetails() {
   let params = useParams();
@@ -18,6 +19,7 @@ export default function MovieDetails() {
       .then(data => {
         console.log(data);
         setDetails({ ...data.result, shareUrl: `${window.location.origin}/movies/${data.result.imdb_id}` });
+        document.title = `${data.result.name} - ${constants.SITE_TITLE}`;
       })
       .catch(error => console.log(error));
   }, [params.imdb_id]);
