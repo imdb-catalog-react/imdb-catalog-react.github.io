@@ -1,0 +1,11 @@
+.top-movies, .top-series {
+    color: #ccc;
+    font-weight: 400;
+    padding: 0 0 20px 0;
+}
+
+.poster {
+    width: 180px;
+    height: 270px;
+    padding-bottom: 20px;
+}
