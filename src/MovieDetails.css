@@ -1,0 +1,14 @@
+.imdb-title-container {
+    min-height: 100vh;
+}
+.dark-overlay {
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.movie-logo {
+    max-width: 300px;
+}

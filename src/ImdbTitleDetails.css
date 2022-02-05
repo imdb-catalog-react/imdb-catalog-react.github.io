@@ -1,0 +1,7 @@
+.imdb-logo {
+    max-width: 300px;
+}
+
+.genre-container, .director-container, .writer-container, .cast-contaier {
+    margin-bottom: 20px;
+}

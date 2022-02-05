@@ -1,0 +1,21 @@
+.seasonDetails {
+    /* black background opacity 50% */
+    background: rgba(0, 0, 0, 0.5);
+}
+.season {
+    color: #fff;
+}
+
+.season.active {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+
+.seasonDetails a.btn {
+    color: #fff;
+}
+
+.seasonDetails li {
+    list-style: none;
+}
