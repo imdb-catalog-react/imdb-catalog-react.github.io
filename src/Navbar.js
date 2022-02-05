@@ -19,17 +19,18 @@ export default function AppNavbar() {
   };
 
   return (
-    <Navbar className="navbar-dark" variant='dark' bg="dark" expand="lg">
+    <Navbar className="navbar-dark" variant='dark' bg="dark" expand="md">
       <Container>
         <Navbar.Brand href="/">
           <FontAwesomeIcon className="navbar-brand-icon" icon={faPlayCircle} />{constants.SITE_TITLE}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+
         <Navbar.Collapse id="navbarScroll">
-          <Nav.Link href="/" className='text-white'>Home</Nav.Link>
           <Nav.Link href="/movies" className='text-white'>Movies</Nav.Link>
           <Nav.Link href="/series" className='text-white'>Series</Nav.Link>
-          <Form className="navbar-search" onSubmit={search}>
+        </Navbar.Collapse>
+        
+        <Form className="navbar-search" onSubmit={search}>
             <InputGroup>
               <FormControl
                 className='text-white bg-dark'
@@ -47,7 +48,8 @@ export default function AppNavbar() {
               </InputGroup.Text>
             </InputGroup>
           </Form>
-        </Navbar.Collapse>
+          
+          <Navbar.Toggle aria-controls="navbarScroll" />
       </Container>
     </Navbar>
   );
