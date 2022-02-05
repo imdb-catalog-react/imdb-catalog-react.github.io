@@ -1,6 +1,12 @@
-.seasonDetails {
+.serieDetails {
+    padding: 20px;
+}
+
+.seasonsList {
+    padding: 20px;
     /* black background opacity 50% */
     background: rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
 }
 .season {
     color: #fff;

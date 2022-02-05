@@ -1,9 +1,10 @@
+import './SerieDetails.css';
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './MovieDetails.css';
 import ImdbTitleDetails from "./ImdbTitleDetails";
 import { Col, Row, Container } from "react-bootstrap";
-import './SerieDetails.css';
+import constants from './config/constants';
 
 export default function SerieDetails() {
   let params = useParams();
@@ -38,6 +39,7 @@ export default function SerieDetails() {
         console.log(serie);
         setDetails(serie);
         setSelectedSeason(1);
+        document.title = `${data.meta.name} - ${constants.SITE_TITLE}`;
       })
       .catch(error => console.log(error));
   }, [params.imdb_id]);
@@ -53,10 +55,10 @@ export default function SerieDetails() {
     >
       <Container>
         <Row>
-          <Col xs={12} md={6}>
+          <Col className="serieDetails" xs={12} md={6} xl={8}>
             <ImdbTitleDetails details={details} />
           </Col>
-          <Col className="seasonDetails" xs={12} md={6}>
+          <Col className="seasonsList" xs={12} md={6} xl={4}>
             <h2>Seasons</h2>
             {details?.seasons && details?.seasons.map(season => (
               <button className={"btn season " + (season === selectedSeason ? " active" : "")} key={season} onClick={() => handleSeasonChange(season)}>
@@ -68,8 +70,8 @@ export default function SerieDetails() {
               <div key={season}>
                 <ul>
                   {details?.seasons && details?.videos.filter(episode => episode.season === season).map(episode => (
-                    <li>
-                      <a key={episode.id} className="btn" href={`/series/${details?.imdb_id}/${episode.id}`}>
+                    <li key={episode.id}>
+                      <a className="text-white" href={`/series/${details?.imdb_id}/${episode.id}`}>
                         Episode: {episode.number} - {episode.name}
                       </a>
                     </li>
