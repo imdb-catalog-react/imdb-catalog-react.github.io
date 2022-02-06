@@ -17,11 +17,6 @@
     color: #000;
 }
 
-
-.seasonDetails a.btn {
-    color: #fff;
-}
-
-.seasonDetails li {
+.seasonsList li {
     list-style: none;
 }

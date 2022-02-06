@@ -1,7 +1,6 @@
 import './SerieDetails.css';
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './MovieDetails.css';
 import ImdbTitleDetails from "./ImdbTitleDetails";
 import { Col, Row, Container } from "react-bootstrap";
 import constants from './config/constants';
@@ -71,7 +70,7 @@ export default function SerieDetails() {
                 <ul>
                   {details?.seasons && details?.videos.filter(episode => episode.season === season).map(episode => (
                     <li key={episode.id}>
-                      <a className="text-white" href={`/series/${details?.imdb_id}/${episode.id}`}>
+                      <a className="text-white" href={`/series/${details?.imdb_id}/season-${season}/episode-${episode.number}`}>
                         Episode: {episode.number} - {episode.name}
                       </a>
                     </li>
