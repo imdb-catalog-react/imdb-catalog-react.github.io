@@ -1,11 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 import React from 'react';
 import {
     BrowserRouter,
     Routes,
     Route
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import { Container } from 'react-bootstrap';
 import Home from './Home';
 import AppNavbar from "./Navbar";
 import NotFound from './NotFound';
@@ -15,7 +16,7 @@ import SearchResults from './SearchResults';
 import ScrollToTop from './ScrollToTop';
 import TopMovies from './movies/TopMovies';
 import TopSeries from './series/TopSeries';
-import { Container } from 'react-bootstrap';
+import EpisodeDetails from './EpisodeDetails';
 
 export default function App() {
     return (
@@ -29,6 +30,7 @@ export default function App() {
                         <Route path="/series" element={<TopSeries />} />
                         <Route path="/movies/:imdb_id" element={<MovieDetails />} />
                         <Route path="/series/:imdb_id" element={<SerieDetails />} />
+                        <Route path="/series/:imdb_id/season-:season/episode-:episode" element={<EpisodeDetails />} />
                         <Route path="/search/:query" element={<SearchResults />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
