@@ -4,9 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 
 ReactDOM.render(
-  <App />,
+  <BrowserRouter>
+    <ScrollToTop>
+      <App />
+    </ScrollToTop>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
